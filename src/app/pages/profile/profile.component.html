@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<app-container>
+  <h1 class="dialogTitle">Profil beállítások</h1>
+  <div class="profile">
+    <div>
+    <mat-card>
+      <form [formGroup]="formUsername" (ngSubmit)="changeUsername()">
+        <h3 class="dialogTitle">Felhasználónév megváltoztatása</h3>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Új Felhasználónév</mat-label>
+          <input type="text" name="username" matInput placeholder="Új Felhasználónév" formControlName="username">
+        </mat-form-field>
+        <button type="submit" mat-raised-button class="maxWidth cardButton" [disabled]="formUsername.invalid" >Felhasználónév megváltoztatás</button>
+      </form>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <form [formGroup]="formEmail" (ngSubmit)="changeEmail()">
+        <h3 class="dialogTitle">Email megváltoztatása</h3>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Új Email</mat-label>
+          <input type="text" name="email" matInput placeholder="Új Email" formControlName="email">
+        </mat-form-field>
+        <button type="submit" mat-raised-button class="maxWidth cardButton" [disabled]="formEmail.invalid" >Email megváltoztatás</button>
+      </form>
+    </mat-card>
+  </div>
+    <mat-card>
+      <form [formGroup]="formPassword" (ngSubmit)="changePassword()">
+        <h3 class="dialogTitle">Jelszó megváltoztatása</h3>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Új jelszó</mat-label>
+          <input type="password" name="password" matInput minlength="6" placeholder="Új jelszó" formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Új jelszó újra</mat-label>
+          <input type="password" name="passwordAgain" matInput minlength="6" placeholder="Új jelszó újra" formControlName="passwordAgain">
+        </mat-form-field>
+        <button type="submit" mat-raised-button class="maxWidth cardButton" [disabled]="formPassword.invalid" >Jelszó megváltoztatás</button>
+      </form>
+    </mat-card>
+
+  </div>
+
+</app-container>

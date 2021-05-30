@@ -1,0 +1,23 @@
+<mat-toolbar class="navbar">
+  <mat-toolbar-row>
+    <a mat-button [routerLink]="[ '/' ]">
+      Specimen
+    </a>
+    <span style="flex: 1 1;"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{ uData[0]['username'] }}&nbsp;
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="[ '/profile' ]">
+        <mat-icon>mood</mat-icon>
+        <span>Profil</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Kijelentkezés</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+  
+</mat-toolbar>

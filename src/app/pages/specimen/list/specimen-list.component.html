@@ -1,0 +1,9 @@
+<app-container classes="container-1 flex">
+  <app-specimen-card class="item" *ngFor="let item of list | async" [specimen]="item">
+  </app-specimen-card>
+  <br>
+</app-container>
+
+<button mat-mini-fab class="actionBtn"  (click)="openDialog()">
+  <mat-icon>add_circle</mat-icon>
+</button>

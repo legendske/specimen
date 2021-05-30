@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+    <h3 class="dialogTitle">Specimen hozzáadás</h3>
+    <div class="inputPair">
+      <mat-form-field class="maxWidth">
+        <mat-label>Status</mat-label>
+        <input matInput focus formControlName="status" required>
+        <mat-hint>available / unavailable / unsatisfactory / entered-in-error</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="maxWidth">
+        <mat-label>Subject</mat-label>
+        <input matInput focus formControlName="subject" required>
+      </mat-form-field>
+    </div>
+    <div class="inputPair">
+      <mat-form-field class="maxWidth">
+        <mat-label>Note</mat-label>
+        <input matInput focus formControlName="note" >
+      </mat-form-field>
+      <mat-form-field class="maxWidth">
+        <mat-label>Type</mat-label>
+        <input matInput focus formControlName="type" required>
+      </mat-form-field>
+    </div>
+    <div class="inputPair">
+      <mat-form-field class="maxWidth">
+        <mat-label>Collector</mat-label>
+        <input matInput focus formControlName="collector" required>
+      </mat-form-field>
+      <mat-form-field class="maxWidth">
+        <mat-label>CollectedTime</mat-label>
+        <input matInput focus placeholder="yyyy-mm-dd" formControlName="collectedDateTime" required>
+      </mat-form-field>
+    </div>
+    <div class="inputPair">
+      <mat-form-field class="maxWidth">
+        <mat-label>Received Time</mat-label>
+        <input matInput focus placeholder="yyyy-mm-dd" formControlName="receivedTime">
+      </mat-form-field>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button mat-button (click)="dialogRef.close()" class="margin-right buttonDefaultInv">Mégse</button>
+      <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid" class="buttonDefault">Hozzáadás</button>
+    </div>
+</form>
+  

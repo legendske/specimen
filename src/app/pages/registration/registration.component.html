@@ -1,0 +1,40 @@
+<div class="centering">
+    <mat-card class="reg-card">
+      <form [formGroup]="form" (ngSubmit)="registration()">
+        <h3>Regisztráció</h3>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Felhasználónév</mat-label>
+          <input matInput type="text" name="nickname" MatInput placeholder="Felhasználónév" required formControlName="username">
+        </mat-form-field>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>E-mail</mat-label>
+          <input type="email" name="email" matInput placeholder="email@email.com" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Jelszó</mat-label>
+          <input type="password" name="password" matInput placeholder="Jelszó" formControlName="password">
+          <mat-hint align="end">min. hossz 6 / {{form.value.password.length}}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="maxWidth singleInput">
+          <mat-label>Jelszó újra</mat-label>
+          <input type="password" name="password" matInput #password2 placeholder="Jelszó újra"
+            formControlName="password2">
+          <mat-hint align="end">min. hossz 6 / {{password2.value.length}}</mat-hint>
+        </mat-form-field>
+        <mat-chip-list *ngIf="error">
+          <mat-chip color="warn" class="max-width" style="margin-top: 16px;" selected>
+            A jelszó megerősítés nem egyezik
+          </mat-chip>
+        </mat-chip-list>
+        <br>
+        <div>
+          <button mat-stroked-button [routerLink]="[ '/login' ]">
+          BEJELENTKEZÉS
+        </button>
+      </div>
+        <br>
+        <button type="submit" mat-raised-button color="primary" class="max-width" [disabled]="form.invalid">REGISZTRÁCIÓ</button>
+      </form>
+    </mat-card>
+  </div>
+  

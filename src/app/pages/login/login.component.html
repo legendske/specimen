@@ -1,0 +1,25 @@
+<div class="center">
+    <mat-card class="log-card">
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <h3>Bejelentkezés</h3>
+      <mat-card id="alertCard" class="alert" *ngIf="alertMessage">
+        {{alertMessage}}
+      </mat-card>
+      <mat-form-field class="maxWidth singleInput">
+        <mat-label>E-mail</mat-label>
+        <input type="email" name="email" matInput placeholder="email@email.com" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="maxWidth singleInput">
+        <mat-label>Jelszó</mat-label>
+        <input type="password" name="password" matInput minlength="6" placeholder="Password" formControlName="password">
+      </mat-form-field>
+      <div>
+        <button mat-stroked-button (click)="navTo('/registration')">
+          Regisztráció
+        </button>
+      </div>
+      <br>
+      <button type="submit" mat-raised-button  [disabled]="form.invalid" >Bejelentkezés</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,9 @@
+Az én alkalmazásom egy Covid tesztekkel foglalkozó webapp. A CRUD összes művelete meg van valósítva benne, mindegyik külön mapákba kiszervezve.
+Firebase adatbázissal össze van kötve. A felhasználó egy regisztráció után tud belépni az alkalmazásba ahol egy üdvözlő oldalról elérhetőek 
+a már felvitt minták, ezekhez hozzá lehet adni még, a meglévőket szerkeszteni, és törölni is.
+A "Profil" menü fül alatt megtudjuk változtatni a felhasználónevünket,email címünket és a jelszavunkat.
+Szóval egy kezdetleges profil oldal műveletek megvannak valósítva. Kijelentkezni is lehet és utánna ugyanazzal vagy akár egy másik felhasználóval újra be lehet lépni.
+A projekt nagyrészét az órai anyag segítségével csináltam.Reszponzív is az alkalmazás.
+Felugró modelekben működik a hozzáadás, szerkesztés.
+Routeok száma meghaladja a négyet.
+Material elemek közül elég sokat használtam(5+).
